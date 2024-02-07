@@ -1,2 +1,2 @@
 s = input("")
-print(str.lower(s))
+print(s.lower())
