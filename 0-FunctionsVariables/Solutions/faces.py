@@ -1,5 +1,5 @@
 name = input("")
-name.replace(":)", "")
-name.replace(":(", "")
+name = name.replace(":)", "🙂")  # replaces :( with emoji
+name = name.replace(":(", "🙁")  # replaces :) with emoji
 print(name)
-# replaces :( with emoji, replaces :) with emoji
+# print
