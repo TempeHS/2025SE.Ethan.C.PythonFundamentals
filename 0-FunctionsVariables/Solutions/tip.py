@@ -9,13 +9,18 @@ def main():  # Main function
     print(f"Leave ${T:.2f}")  # print total
 
 
-def D_float(D):  # function for price
-    str.removeprefix("$")  # idk how to do this
-    return float(D)
+def D_float(d):  # function for price
+    d = d.replace("$", " ")
+    d = float(d)
+    d = round(d, 2)
+    return d
 
 
-def P_float():  # function for tip
-    str.removesuffix("%")
+def P_float(p):  # function for tip
+    p = p.replace("%", " ")
+    p = float(p)
+    p = p / 100
+    return p
 
 
 main()
