@@ -1,32 +1,32 @@
 def main():
-	player_choice = Input("Rock Paper or Scissor")
+	player_choice = input("Rock Paper or Scissor")
 	computer_choice = FUNCTION generate_random
-	SWITCHCASE(player_choice)
-		CASE rock
-			IF computer_choice == rock
-				DISPLAY Draw
-			ELSEIF computer_choice == paper
-				DISPLAY Lose
-			ELSE
-				DISPLAY Win
-			EXIT
+	match player_choice:
+		case "rock":
+			match computer_choice:
+				case "rock":
+					print("Draw")
+				case "paper":
+					print("Lose")
+				case "scissors":
+					print("Win")
 
-		CASE paper
-			IF computer_choice == rock
-				DISPLAY Win
-			ELSEIF computer_choice == paper
-				DISPLAY Draw
-			ELSE
-				DISPLAY Lose
-			EXIT
+		case "paper":
+			match computer_choice:
+				case "rock":
+					print("Win")
+				case "paper":
+					print("Draw")
+				case "scissors":
+					print("Lose")
 
-		CASE scissors
-			IF computer_choice == rock
-				DISPLAY Lose
-			ELSEIF computer_choice == paper
-				DISPLAY Win
-			ELSE
-				DISPLAY Draw
-			EXIT
+		case "scissors":
+			match computer_choice:
+				case "rock":
+					print("Lose")
+				case "paper":
+					print("Win")
+				case "scissors":
+					print("Draw")
 
-END rps_logic
+main()
