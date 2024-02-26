@@ -2,8 +2,8 @@ def main():
     input("Do you want a coke for 50c? ")
     c = 0
     b = insert(c)
-    if int(b) < 0:
-        print(f"Change owed {b: }")
+    if b < 0:
+        print(f"Change owed {-b: }")
     else:
         print(f"Amount due {b:}")
 

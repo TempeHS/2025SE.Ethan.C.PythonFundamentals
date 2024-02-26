@@ -1,13 +1,14 @@
 def main():
-    CamelCase = input()
-    convert(CamelCase)
-    name = str.lower(CamelCase)
-    print(name)
+    camelcase(input("What's your name in camel case? "))
+    print(" ")
 
 
-def convert():
-    d = 5
-    d - 10
-convert()
+def camelcase(txt):
+    for i in txt:
+        if (i).isupper():
+            print("_" + i.casefold(), end="")
+        else:
+            print(i, end="")
+
 
 main()
