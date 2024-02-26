@@ -1,19 +1,26 @@
 def main():
-    c = 50
-    a = insert(input("Do you want a coke for 50c? "))
-    b = int(c - a)
-    if b > 0:
-        print(f"Amount Due {b: }")
-    elif b < 0:
+    input("Do you want a coke for 50c? ")
+    c = 0
+    b = insert(c)
+    if int(b) < 0:
         print(f"Change owed {b: }")
+    else:
+        print(f"Amount due {b:}")
 
 
-def insert(a):
-    a = input("5c, 10c or 25c ")
-    if a == 5 or 10 or 25:
-        return int(a)
-    if a != 5 or 10 or 25:
-        input("Try again ")
+def insert(c):
+    c = 50
+    while c > 0:
+        a = int(input("5c, 10c or 25c "))
+        if a == 5 or 10 or 25:  # logic does not work
+            b = c - a
+            if b > 0:
+                print(f"Amount Due {b: }")
+                c = b
+            elif b <= 0:
+                return b
+        elif a != 5 or 10 or 25:
+            print(f"Amount Due {c: }")
 
 
 main()
