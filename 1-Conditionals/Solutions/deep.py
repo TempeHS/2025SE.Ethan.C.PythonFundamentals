@@ -1,8 +1,7 @@
 print("What is the Answer to the Great Question of Life?")
-A = input()
-if A == "42":
-    print("Yes")
-elif A == "forty two":
+B = input()
+A = str.casefold(B)
+if A == "42" or A == "forty-two" or A == "forty two":
     print("Yes")
 else:
     print("No")

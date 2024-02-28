@@ -19,7 +19,7 @@ def insert(c):
                 c = b
             elif b <= 0:
                 return b
-        elif a != 5 or 10 or 25:
+        elif a != 5 or a != 10 or a != 25:
             print(f"Amount Due {c: }")
 
 
