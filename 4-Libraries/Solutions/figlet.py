@@ -18,7 +18,7 @@ def main():
         f = random.choice(figlet.getFonts())
         figlet.setFont(font=f)
         print(figlet.renderText(A))
-    elif f.isalpha == f:
+    elif f.isalpha() is True:
         figlet.setFont(font=f)
         print(figlet.renderText(A))
     else:
