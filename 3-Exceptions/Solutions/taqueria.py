@@ -2,19 +2,19 @@ def main():
     while True:
         try:
             item = input()
+            menu[item]
         except EOFError:
             print("Error")
         else:
             break
 
-    d[item]
-    if item in d:
+    if item in menu:
         bill = 
         print(f"{bill}")
 
 main()
 
-d = {
+menu = {
     "Baja Taco": 4.25,
     "Burrito": 7.50,
     "Bowl": 8.50,
