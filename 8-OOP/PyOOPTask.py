@@ -1,9 +1,11 @@
 class Shape:
-    def __init__(self, shapeX, shapeY, shapeZ, shapeC, shapeS):
-        self.shapeX = shapeX  # X of shape origin
-        self.shapeY = shapeY  # Y of shape origin
-        self.shapeZ = shapeZ  # Z of shape origin
-        self.shapeC = shapeC  # Colour of shape
+    def __init__(self, PosX, PosY, PosZ, ColR, ColG, ColB, shapeS):
+        self.PosX = PosX  # X of shape origin
+        self.PosY = PosY  # Y of shape origin
+        self.PosZ = PosZ  # Z of shape origin
+        self.ColR = ColR  # Red Colour of shape
+        self.ColG = ColG  # Green Colour of shape
+        self.ColB = ColB  # Blue Colour of shape
         self.shapeS = shapeS  # Shape of shape
 
     def assessShape(self):
@@ -16,17 +18,20 @@ class Shape:
                 return 2
 
     @classmethod
-    def VECTOR(self):
-        return f"V:{self.shapeX},{self.shapeY},{self.shapeZ},{self.shapeC}"
+    def GetPos(self):
+        return f"P:{self.PosX},{self.PosY},{self.PosZ}"
 
     @classmethod
-    def INFO(self):
+    def GetCol(self):
+        return f"C:{self.ColR},{self.ColG},{self.ColB}"
+
+    @classmethod
+    def GetShape(self):
         return f"{self.shapeS}"
 
     @classmethod
     def CrossSection(self):
         if Shape.assessShape() == 0:
-
 
     @classmethod
     def SurfaceArea(self):
@@ -43,36 +48,57 @@ class Shape:
 #######################################################################################################################
 
     @property
-    def shapeX(self):
-        return self._shapeX
+    def PosX(self):
+        return self._PosX
 
-    @shapeX.setter
-    def shapeX(self, shapeX):
-        self._shapeX = shapeX
-
-    @property
-    def shapeY(self):
-        return self._shapeY
-
-    @shapeY.setter
-    def shapeY(self, shapeY):
-        self._shapeY = shapeY
+    @PosX.setter
+    def PosX(self, PosX):
+        self._PosX = int(PosX)
 
     @property
-    def shapeZ(self):
-        return self._shapeZ
+    def PosY(self):
+        return self._PosY
 
-    @shapeZ.setter
-    def shapeZ(self, shapeZ):
-        self._shapeZ = shapeZ
+    @PosY.setter
+    def PosY(self, PosY):
+        self._PosY = int(PosY)
 
     @property
-    def shapeC(self):
-        return self._shapeC
+    def PosZ(self):
+        return self._PosZ
 
-    @shapeC.setter
-    def shapeC(self, shapeC):
-        self._shapeC = shapeC
+    @PosZ.setter
+    def PosZ(self, PosZ):
+        self._PosZ = int(PosZ)
+
+    @property
+    def ColR(self):
+        return self._ColR
+
+    @ColR.setter
+    def ColR(self, ColR):
+        if ColR < 255 and ColR > 0:
+            self._ColR = (ColR)
+        else:
+            raise ValueError("Invalid Red Colour")
+
+    @property
+    def ColR(self):
+        return self._ColR
+
+    @ColR.setter
+    def ColR(self, ColR):
+        if ColR < 255 and ColR > 0:
+            self._ColR = int(ColR)
+        else:
+            raise ValueError("Invalid Red Colour")
+
+    @property
+    def ColB(self):
+        return self._ColB
+
+    @ColB.setter
+    def ColB(self, ColB):
 
     @property
     def shapeS(self):
