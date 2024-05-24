@@ -17,35 +17,34 @@ class Shape:
             case "Prism":
                 return 2
 
+#below here are all methods
+
     @classmethod
-    def GetPos(self):
+    def GetPos(self): #get position
         return f"P:{self.PosX},{self.PosY},{self.PosZ}"
 
     @classmethod
-    def GetCol(self):
-        return f"C:{self.ColR},{self.ColG},{self.ColB}"
+    def GetCol(self): #get colour
+        return f"C:{self.ColR}, {self.ColG}, {self.ColB}"
 
     @classmethod
-    def GetShape(self):
-        return f"{self.shapeS}"
-
-    @classmethod
-    def CrossSection(self):
+    def Get2D(self): #find 2D
         if Shape.assessShape() == 0:
 
     @classmethod
-    def SurfaceArea(self):
+    def SurfaceArea(self): #find surface area
         return f"{self.shapeS}"
 
     @classmethod
-    def Volume(self):
+    def Volume(self): #find volume
         return f"{self.shapeS}"
 
     @classmethod
-    def SurfaceCount(self):
+    def SurfaceCount(self): #find surface count
         return f"{self.shapeS}"
 
 #######################################################################################################################
+#below here are getters and setters for everything
 
     @property
     def PosX(self):
@@ -83,15 +82,15 @@ class Shape:
             raise ValueError("Invalid Red Colour")
 
     @property
-    def ColR(self):
-        return self._ColR
+    def ColG(self):
+        return self._ColG
 
-    @ColR.setter
-    def ColR(self, ColR):
-        if ColR < 255 and ColR > 0:
-            self._ColR = int(ColR)
+    @ColG.setter
+    def ColG(self, ColG):
+        if int(ColG) < 255 and int(ColG) > 0:
+            self._ColG = int(ColG)
         else:
-            raise ValueError("Invalid Red Colour")
+            raise ValueError("Invalid Green Colour")
 
     @property
     def ColB(self):
@@ -99,6 +98,11 @@ class Shape:
 
     @ColB.setter
     def ColB(self, ColB):
+        if int(ColB) < 255 and int(ColB) > 0:
+            self._ColB = int(ColB)
+        else:
+            raise ValueError("Invalid Blue Colour")
+
 
     @property
     def shapeS(self):
